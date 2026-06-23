@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Flattie Daddy's Bait Camp | Live Bait, Tackle & Inshore Charters — Freeport, TX</title>
+  <meta name="description" content="Flattie Daddy's Bait Camp in Freeport, TX — live bait, fishing tackle, ice & snacks, plus guided inshore redfish & trout charters. Open daily 5 AM–7 PM. Call (979) 534-9143." />
+  <meta name="keywords" content="bait shop Freeport TX, live bait Freeport, fishing tackle Freeport Texas, inshore charter redfish trout, bait camp TX-332, Flattie Daddy's" />
+  <meta property="og:title" content="Flattie Daddy's Bait Camp | Freeport, TX" />
+  <meta property="og:description" content="Live bait, tackle & inshore charters on TX-332. Open daily 5 AM–7 PM. Stop in before you hit the water." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=1200&q=80" />
+  <link rel="icon" type="image/png" href="flattie-logo.png" />
+  <link rel="apple-touch-icon" href="flattie-logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      /* coastal & rugged — drawn from the bright-blue building + sunrise sky */
+      --deep: #062a3f;          /* deep harbor blue (near-black) */
+      --ocean: #0d4d6e;         /* ocean blue */
+      --building: #1493d6;      /* the shop's bright blue */
+      --sky: #6fc3e8;           /* pale morning sky */
+      --sand: #e7d6b0;          /* sandy tan */
+      --sand-pale: #f6eedd;     /* pale sand background */
+      --sunrise: #ef7d3e;       /* sunrise coral/orange */
+      --sunrise-deep: #d85f23;
+      --cream: #fbf7ee;
+      --white: #ffffff;
+      --text: #14252e;
+      --muted: #5a6b73;
+      --border: #d8cdb4;
+      --shadow: 0 18px 50px rgba(6,42,63,0.18);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--text);
+      background: var(--cream);
+      overflow-x: hidden;
+      line-height: 1.65;
+    }
+
+    h1, h2, h3 { line-height: 1.05; }
+
+    .display {
+      font-family: 'Anton', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.01em;
+      font-weight: 400;
+    }
+
+    .label {
+      font-family: 'Oswald', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      font-weight: 600;
+      font-size: 0.78rem;
+    }
+
+    .wrap { width: min(1180px, 90%); margin: 0 auto; }
+
+    section { position: relative; }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      font-family: 'Oswald', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 600;
+      font-size: 0.92rem;
+      padding: 0.95rem 1.7rem;
+      border-radius: 6px;
+      border: 2px solid transparent;
+      cursor: pointer;
+      text-decoration: none;
+      transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease, color 0.18s ease;
+    }
+    .btn svg { width: 18px; height: 18px; }
+    .btn-sun { background: var(--sunrise); color: var(--white); box-shadow: 0 10px 24px rgba(216,95,35,0.35); }
+    .btn-sun:hover { background: var(--sunrise-deep); transform: translateY(-2px); }
+    .btn-ocean { background: var(--ocean); color: var(--white); }
+    .btn-ocean:hover { background: var(--deep); transform: translateY(-2px); }
+    .btn-ghost { background: transparent; color: var(--white); border-color: rgba(255,255,255,0.7); }
+    .btn-ghost:hover { background: var(--white); color: var(--deep); transform: translateY(-2px); }
+    .btn-line { background: transparent; color: var(--ocean); border-color: var(--ocean); }
+    .btn-line:hover { background: var(--ocean); color: var(--white); transform: translateY(-2px); }
+
+    /* ─────────── NAV ─────────── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 600;
+      height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 5%;
+      transition: background 0.35s, box-shadow 0.35s, height 0.35s;
+    }
+    nav.scrolled {
+      background: rgba(6,42,63,0.96);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 2px 26px rgba(0,0,0,0.32);
+      height: 64px;
+    }
+    .nav-brand { display: flex; align-items: center; gap: 0.7rem; text-decoration: none; cursor: pointer; }
+    .nav-brand .logo { height: 58px; width: auto; flex: none; display: block; background: var(--white); border-radius: 10px; padding: 5px 9px; box-shadow: 0 4px 16px rgba(0,0,0,0.22); transition: height 0.35s, padding 0.35s; }
+    nav.scrolled .nav-brand .logo { height: 46px; padding: 4px 7px; }
+    .nav-brand-text { display: flex; flex-direction: column; line-height: 1; }
+    .nav-brand-name {
+      font-family: 'Anton', sans-serif;
+      text-transform: uppercase;
+      font-size: 1.15rem;
+      color: var(--white);
+      letter-spacing: 0.02em;
+    }
+    .nav-brand-sub {
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.6rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--sky);
+      margin-top: 3px;
+      font-weight: 600;
+    }
+    .nav-links { display: flex; align-items: center; gap: 2rem; }
+    .nav-links a {
+      font-family: 'Oswald', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--white);
+      text-decoration: none;
+      opacity: 0.9;
+      transition: opacity 0.2s, color 0.2s;
+    }
+    .nav-links a:hover { opacity: 1; color: var(--sky); }
+    .nav-links .nav-cta {
+      background: var(--sunrise);
+      padding: 0.55rem 1.1rem;
+      border-radius: 5px;
+      opacity: 1;
+    }
+    .nav-links .nav-cta:hover { background: var(--sunrise-deep); color: var(--white); }
+
+    .hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: 0; cursor: pointer; padding: 6px; }
+    .hamburger span { width: 26px; height: 3px; background: var(--white); border-radius: 2px; transition: 0.3s; }
+
+    .mobile-menu {
+      position: fixed;
+      inset: 0;
+      z-index: 590;
+      background: rgba(6,42,63,0.98);
+      backdrop-filter: blur(8px);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1.8rem;
+      transform: translateX(100%);
+      transition: transform 0.4s cubic-bezier(.7,0,.3,1);
+    }
+    .mobile-menu.open { transform: translateX(0); }
+    .mobile-menu a {
+      font-family: 'Oswald', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 1.4rem;
+      color: var(--white);
+      text-decoration: none;
+    }
+    .mobile-menu a:hover { color: var(--sunrise); }
+    .mobile-close { position: absolute; top: 28px; right: 7%; background: none; border: 0; color: var(--white); font-size: 2.4rem; cursor: pointer; line-height: 1; }
+
+    /* ─────────── HERO ─────────── */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      background:
+        linear-gradient(90deg, rgba(6,42,63,0.88) 0%, rgba(6,42,63,0.5) 50%, rgba(6,42,63,0.28) 100%),
+        linear-gradient(180deg, rgba(6,42,63,0.3) 0%, rgba(6,42,63,0.2) 45%, rgba(6,42,63,0.82) 100%),
+        url('https://images.unsplash.com/photo-1749821280282-44501ac7bdb3?w=1800&q=80') center/cover fixed;
+      padding: 120px 0 70px;
+    }
+    .hero-inner { max-width: 720px; }
+    .hero .label { color: var(--sky); margin-bottom: 1.1rem; display: inline-flex; align-items: center; gap: 0.6rem; }
+    .hero .label::before { content: ''; width: 38px; height: 2px; background: var(--sunrise); display: inline-block; }
+    .hero h1 {
+      font-family: 'Anton', sans-serif;
+      text-transform: uppercase;
+      color: var(--white);
+      font-size: clamp(2.8rem, 7vw, 5.6rem);
+      letter-spacing: 0.01em;
+      text-shadow: 0 4px 30px rgba(0,0,0,0.4);
+    }
+    .hero h1 .accent { color: var(--sunrise); }
+    .hero p {
+      color: rgba(255,255,255,0.92);
+      font-size: clamp(1.05rem, 2vw, 1.3rem);
+      margin: 1.5rem 0 2.2rem;
+      max-width: 560px;
+    }
+    .hero-btns { display: flex; flex-wrap: wrap; gap: 1rem; }
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.8rem;
+      margin-top: 2.8rem;
+      padding-top: 1.8rem;
+      border-top: 1px solid rgba(255,255,255,0.22);
+    }
+    .hero-meta div { color: var(--white); }
+    .hero-meta .k { font-family: 'Oswald', sans-serif; text-transform: uppercase; letter-spacing: 0.18em; font-size: 0.68rem; color: var(--sky); }
+    .hero-meta .v { font-weight: 600; font-size: 1.02rem; margin-top: 2px; }
+
+    /* ─────────── OPEN BANNER ─────────── */
+    .banner {
+      background: var(--sunrise);
+      color: var(--white);
+      text-align: center;
+      padding: 0.85rem 1rem;
+      font-family: 'Oswald', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-weight: 600;
+      font-size: 0.92rem;
+    }
+    .banner span { color: var(--deep); }
+
+    /* ─────────── SECTION HEADER ─────────── */
+    .sec-head { max-width: 640px; margin-bottom: 3rem; }
+    .sec-head.center { margin-left: auto; margin-right: auto; text-align: center; }
+    .sec-head .label { color: var(--sunrise-deep); display: block; margin-bottom: 0.9rem; }
+    .sec-head h2 {
+      font-family: 'Anton', sans-serif;
+      text-transform: uppercase;
+      font-size: clamp(2rem, 4.5vw, 3.2rem);
+      color: var(--deep);
+    }
+    .sec-head p { color: var(--muted); margin-top: 1rem; font-size: 1.08rem; }
+
+    /* ─────────── SHOP / WHAT WE CARRY ─────────── */
+    .shop { padding: 6rem 0; background: var(--cream); }
+    .shop-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.6rem;
+    }
+    .shop-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 2.2rem 1.8rem;
+      transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+    }
+    .shop-card:hover { transform: translateY(-6px); box-shadow: var(--shadow); border-color: var(--building); }
+    .shop-icon {
+      width: 58px; height: 58px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--building), var(--ocean));
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 1.3rem;
+    }
+    .shop-icon svg { width: 30px; height: 30px; color: var(--white); }
+    .shop-card h3 { font-family: 'Oswald', sans-serif; text-transform: uppercase; letter-spacing: 0.04em; font-size: 1.25rem; color: var(--deep); margin-bottom: 0.6rem; }
+    .shop-card p { color: var(--muted); font-size: 0.98rem; }
+
+    /* ─────────── CHARTERS ─────────── */
+    .charter { padding: 6rem 0; background: var(--deep); color: var(--white); overflow: hidden; }
+    .charter-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 3.5rem; align-items: center; }
+    .charter .label { color: var(--sunrise); display: block; margin-bottom: 0.9rem; }
+    .charter h2 { font-family: 'Anton', sans-serif; text-transform: uppercase; font-size: clamp(2rem, 4.5vw, 3.4rem); }
+    .charter h2 .accent { color: var(--sky); }
+    .charter > .wrap p.lead { color: rgba(255,255,255,0.85); }
+    .charter-text p { color: rgba(255,255,255,0.85); margin: 1.2rem 0 1.8rem; font-size: 1.08rem; }
+    .charter-features { list-style: none; display: grid; gap: 0.9rem; margin-bottom: 2.2rem; }
+    .charter-features li { display: flex; align-items: center; gap: 0.8rem; font-weight: 500; }
+    .charter-features svg { width: 22px; height: 22px; color: var(--sunrise); flex: none; }
+    .charter-img {
+      position: relative;
+      border-radius: 14px;
+      overflow: hidden;
+      min-height: 440px;
+      box-shadow: var(--shadow);
+      background: url('https://images.unsplash.com/photo-1515631604561-23e0be68ee06?w=1000&q=80') center/cover;
+    }
+    .charter-img .tag {
+      position: absolute; bottom: 18px; left: 18px;
+      background: var(--sunrise); color: var(--white);
+      font-family: 'Oswald', sans-serif; text-transform: uppercase; letter-spacing: 0.08em;
+      font-weight: 600; font-size: 0.85rem;
+      padding: 0.5rem 1rem; border-radius: 6px;
+    }
+    .catch-row { display: flex; gap: 1rem; flex-wrap: wrap; margin: 1.5rem 0 2rem; }
+    .catch-pill {
+      border: 1px solid rgba(255,255,255,0.25);
+      border-radius: 30px;
+      padding: 0.5rem 1.2rem;
+      font-family: 'Oswald', sans-serif; text-transform: uppercase; letter-spacing: 0.08em;
+      font-size: 0.85rem; font-weight: 500;
+    }
+
+    /* ─────────── VISIT ─────────── */
+    .visit { padding: 6rem 0; background: var(--sand-pale); }
+    .visit-grid { display: grid; grid-template-columns: 1fr 1.15fr; gap: 3rem; align-items: stretch; }
+    .hours-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 2.5rem;
+      box-shadow: var(--shadow);
+    }
+    .hours-card h3 { font-family: 'Anton', sans-serif; text-transform: uppercase; font-size: 1.7rem; color: var(--deep); margin-bottom: 0.4rem; }
+    .open-flag {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: #e6f6ec; color: #137a3a;
+      font-family: 'Oswald', sans-serif; text-transform: uppercase; letter-spacing: 0.1em;
+      font-size: 0.78rem; font-weight: 600;
+      padding: 0.4rem 0.9rem; border-radius: 30px; margin-bottom: 1.6rem;
+    }
+    .open-flag .dot { width: 8px; height: 8px; border-radius: 50%; background: #1aa84f; box-shadow: 0 0 0 4px rgba(26,168,79,0.18); }
+    .hours-list { list-style: none; }
+    .hours-list li {
+      display: flex; justify-content: space-between;
+      padding: 0.7rem 0;
+      border-bottom: 1px dashed var(--border);
+      font-size: 1rem;
+    }
+    .hours-list li:last-child { border-bottom: 0; }
+    .hours-list .day { font-weight: 600; color: var(--deep); }
+    .hours-list .time { color: var(--ocean); font-family: 'Oswald', sans-serif; letter-spacing: 0.03em; }
+    .hours-list li.today { background: var(--sand-pale); margin: 0 -1rem; padding-left: 1rem; padding-right: 1rem; border-radius: 6px; }
+
+    .info-stack { display: flex; flex-direction: column; gap: 1.4rem; }
+    .info-row { display: flex; gap: 1rem; align-items: flex-start; }
+    .info-row .ic {
+      width: 46px; height: 46px; flex: none; border-radius: 10px;
+      background: linear-gradient(135deg, var(--building), var(--ocean));
+      display: flex; align-items: center; justify-content: center;
+    }
+    .info-row .ic svg { width: 22px; height: 22px; color: var(--white); }
+    .info-row .k { font-family: 'Oswald', sans-serif; text-transform: uppercase; letter-spacing: 0.14em; font-size: 0.7rem; color: var(--muted); }
+    .info-row .v { font-size: 1.1rem; font-weight: 600; color: var(--deep); }
+    .info-row a.v { text-decoration: none; }
+    .info-row a.v:hover { color: var(--building); }
+    .map-frame { border: 0; width: 100%; height: 260px; border-radius: 14px; box-shadow: var(--shadow); margin-top: 0.4rem; }
+
+    /* ─────────── CONTACT ─────────── */
+    .contact { padding: 6rem 0; background: var(--ocean); color: var(--white); }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3.5rem; align-items: start; }
+    .contact .label { color: var(--sky); display: block; margin-bottom: 0.9rem; }
+    .contact h2 { font-family: 'Anton', sans-serif; text-transform: uppercase; font-size: clamp(2rem, 4.5vw, 3.2rem); }
+    .contact-grid p { color: rgba(255,255,255,0.85); margin: 1rem 0 1.8rem; }
+    .quick-actions { display: flex; flex-direction: column; gap: 1rem; }
+    .qa {
+      display: flex; align-items: center; gap: 1rem;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 12px; padding: 1.1rem 1.3rem;
+      text-decoration: none; color: var(--white);
+      transition: background 0.2s, transform 0.2s;
+    }
+    .qa:hover { background: rgba(255,255,255,0.16); transform: translateX(4px); }
+    .qa .ic { width: 42px; height: 42px; flex: none; border-radius: 10px; background: var(--sunrise); display: flex; align-items: center; justify-content: center; }
+    .qa .ic svg { width: 22px; height: 22px; color: var(--white); }
+    .qa .k { font-family: 'Oswald', sans-serif; text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.68rem; color: var(--sky); }
+    .qa .v { font-weight: 600; font-size: 1.05rem; }
+
+    .form-card { background: var(--white); border-radius: 16px; padding: 2.4rem; box-shadow: var(--shadow); }
+    .form-card h3 { font-family: 'Oswald', sans-serif; text-transform: uppercase; letter-spacing: 0.04em; color: var(--deep); font-size: 1.4rem; margin-bottom: 1.4rem; }
+    .field { margin-bottom: 1.1rem; }
+    .field label { display: block; font-family: 'Oswald', sans-serif; text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.72rem; color: var(--muted); margin-bottom: 0.4rem; }
+    .field input, .field select, .field textarea {
+      width: 100%; padding: 0.85rem 1rem;
+      border: 1px solid var(--border); border-radius: 8px;
+      font-family: 'Inter', sans-serif; font-size: 1rem; color: var(--text);
+      background: var(--cream); transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .field input:focus, .field select:focus, .field textarea:focus {
+      outline: none; border-color: var(--building); box-shadow: 0 0 0 3px rgba(20,147,214,0.15); background: var(--white);
+    }
+    .field textarea { resize: vertical; min-height: 110px; }
+    .form-card .btn { width: 100%; justify-content: center; }
+    .form-note { font-size: 0.82rem; color: var(--muted); margin-top: 0.9rem; text-align: center; }
+
+    /* ─────────── FOOTER ─────────── */
+    footer { background: var(--deep); color: rgba(255,255,255,0.7); padding: 3.5rem 0 2rem; }
+    .foot-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 2.5rem; padding-bottom: 2.5rem; border-bottom: 1px solid rgba(255,255,255,0.12); }
+    .foot-brand { display: flex; align-items: center; gap: 0.8rem; margin-bottom: 1rem; }
+    .foot-brand .logo { height: 120px; width: auto; display: block; background: var(--white); border-radius: 14px; padding: 10px 14px; box-shadow: 0 6px 22px rgba(0,0,0,0.28); }
+    .foot-brand-name { font-family: 'Anton', sans-serif; text-transform: uppercase; font-size: 1.3rem; color: var(--white); line-height: 1; }
+    .foot-brand-sub { font-family: 'Oswald', sans-serif; font-size: 0.62rem; letter-spacing: 0.26em; text-transform: uppercase; color: var(--sky); margin-top: 3px; }
+    footer p { font-size: 0.95rem; max-width: 320px; }
+    .foot-col h4 { font-family: 'Oswald', sans-serif; text-transform: uppercase; letter-spacing: 0.12em; color: var(--white); font-size: 0.9rem; margin-bottom: 1rem; }
+    .foot-col a, .foot-col span { display: block; color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.95rem; margin-bottom: 0.6rem; }
+    .foot-col a:hover { color: var(--sky); }
+    .foot-bottom { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; padding-top: 1.8rem; font-size: 0.85rem; }
+    .foot-bottom a { color: var(--sky); text-decoration: none; }
+
+    /* ─────────── REVEAL ANIM ─────────── */
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.in { opacity: 1; transform: none; }
+
+    /* ─────────── RESPONSIVE ─────────── */
+    @media (max-width: 900px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .charter-grid, .visit-grid, .contact-grid { grid-template-columns: 1fr; }
+      .charter-img { min-height: 320px; order: -1; }
+      .foot-grid { grid-template-columns: 1fr 1fr; }
+      .hero { background-attachment: scroll; }
+    }
+    @media (max-width: 560px) {
+      .foot-grid { grid-template-columns: 1fr; }
+      .hero-btns .btn { width: 100%; justify-content: center; }
+      .hours-card, .form-card { padding: 1.8rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ─────────── NAV ─────────── -->
+  <nav id="nav">
+    <a href="#home" class="nav-brand">
+      <img class="logo" src="flattie-logo.png" alt="Flattie Daddy's Bait Camp" />
+      <span class="nav-brand-text">
+        <span class="nav-brand-name">Flattie Daddy's</span>
+        <span class="nav-brand-sub">Bait Camp</span>
+      </span>
+    </a>
+    <div class="nav-links">
+      <a href="#shop">The Camp</a>
+      <a href="#charters">Charters</a>
+      <a href="#visit">Visit</a>
+      <a href="#contact">Contact</a>
+      <a href="tel:+19795349143" class="nav-cta">Call Now</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="mobile-close" id="mobileClose" aria-label="Close menu">&times;</button>
+    <a href="#shop">The Camp</a>
+    <a href="#charters">Charters</a>
+    <a href="#visit">Visit</a>
+    <a href="#contact">Contact</a>
+    <a href="tel:+19795349143">Call (979) 534-9143</a>
+  </div>
+
+  <!-- ─────────── HERO ─────────── -->
+  <header class="hero" id="home">
+    <div class="wrap hero-inner">
+      <span class="label">Freeport, Texas &middot; On TX-332</span>
+      <h1>Tight Lines Start at <span class="accent">Flattie Daddy's</span></h1>
+      <p>Your first stop before the first cast. Live bait, fresh tackle, and guided inshore trips for redfish &amp; trout — right on the way to the water.</p>
+      <div class="hero-btns">
+        <a class="btn btn-sun" href="https://www.google.com/maps/dir/?api=1&destination=1517+TX-332+Freeport+TX+77541" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-6-5.7-6-10a6 6 0 1 1 12 0c0 4.3-6 10-6 10z"/><circle cx="12" cy="11" r="2.5"/></svg>
+          Get Directions
+        </a>
+        <a class="btn btn-ghost" href="tel:+19795349143">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.4-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+          (979) 534-9143
+        </a>
+      </div>
+      <div class="hero-meta">
+        <div><div class="k">Hours</div><div class="v">Open Daily · 5 AM – 7 PM</div></div>
+        <div><div class="k">Find Us</div><div class="v">1517 TX-332, Freeport</div></div>
+        <div><div class="k">Rated</div><div class="v">★ 5.0 on Google (22)</div></div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ─────────── OPEN BANNER ─────────── -->
+  <div class="banner">🐟 Live bait ready at 5 AM — <span>stop in before sunrise &amp; beat the crowd</span></div>
+
+  <!-- ─────────── THE CAMP / WHAT WE CARRY ─────────── -->
+  <section class="shop" id="shop">
+    <div class="wrap">
+      <div class="sec-head center reveal">
+        <span class="label">Everything you need, one stop</span>
+        <h2>Stocked for the Day on the Water</h2>
+        <p>Pull in, grab your bait and gear, and get to fishing. We keep the cooler full and the tackle wall ready so you never lose a good morning bite.</p>
+      </div>
+      <div class="shop-grid">
+        <div class="shop-card reveal">
+          <div class="shop-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 12c3-4 7-6 12-6 3 0 5 1 6 3-1 2-3 3-6 3-5 0-9-2-12 0z"/><path d="M16 9l4-3M16 9l4 3"/><circle cx="8" cy="10.5" r="0.8" fill="currentColor"/></svg></div>
+          <h3>Live Bait</h3>
+          <p>Fresh live shrimp, mullet, croaker &amp; more — kept lively in aerated tanks and ready the moment we open.</p>
+        </div>
+        <div class="shop-card reveal">
+          <div class="shop-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4l9 9"/><path d="M14 14l-2 2 4 4 2-2-4-4z"/><path d="M13 13a3 3 0 1 0-1 1"/></svg></div>
+          <h3>Tackle &amp; Gear</h3>
+          <p>Rods, reels, line, hooks, weights, leaders, popping corks and the go-to lures for the bays around Freeport.</p>
+        </div>
+        <div class="shop-card reveal">
+          <div class="shop-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 8h14l-1 12H6L5 8z"/><path d="M8 8V6a4 4 0 0 1 8 0v2"/></svg></div>
+          <h3>Ice &amp; Snacks</h3>
+          <p>Bagged ice and quick snacks to keep your catch fresh and your crew fed all day long.</p>
+        </div>
+        <div class="shop-card reveal">
+          <div class="shop-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 18c2-1 3-3 3-5 0-3 3-5 7-5s7 2 7 5-3 5-7 5c-2 0-3 .5-4 1.5"/><circle cx="16" cy="11" r="0.9" fill="currentColor"/><path d="M3 18l-1 3 3-1"/></svg></div>
+          <h3>Local Know-How</h3>
+          <p>Ask us where they're biting. We fish these waters and we'll point you to what's working right now.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────── CHARTERS ─────────── -->
+  <section class="charter" id="charters">
+    <div class="wrap">
+      <div class="charter-grid">
+        <div class="charter-text reveal">
+          <span class="label">Guided Inshore Charters</span>
+          <h2>Chase <span class="accent">Redfish &amp; Trout</span> the Local Way</h2>
+          <p>Climb aboard with a guide who knows every cut, flat and shoreline around Freeport. We run inshore trips built for solid action and a cooler worth bragging about — whether it's your first trip or your hundredth.</p>
+          <div class="catch-row">
+            <span class="catch-pill">🐟 Redfish</span>
+            <span class="catch-pill">🐟 Speckled Trout</span>
+            <span class="catch-pill">🌅 Inshore Bays</span>
+          </div>
+          <ul class="charter-features">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Bait &amp; tackle provided — just bring yourself</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Great for families, friends &amp; first-timers</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> Local guide who fishes these waters daily</li>
+          </ul>
+          <a class="btn btn-sun" href="#contact">Book a Charter</a>
+        </div>
+        <div class="charter-img reveal">
+          <span class="tag">Inshore Redfish &amp; Trout</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────── VISIT ─────────── -->
+  <section class="visit" id="visit">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="label">Find the Blue Building</span>
+        <h2>Come See Us in Freeport</h2>
+        <p>Right on TX-332 on your way to the water — you can't miss the bright blue bait camp.</p>
+      </div>
+      <div class="visit-grid">
+        <div class="hours-card reveal">
+          <span class="open-flag"><span class="dot"></span> Open Now</span>
+          <h3>Store Hours</h3>
+          <ul class="hours-list" id="hoursList">
+            <li data-day="0"><span class="day">Sunday</span><span class="time">5 AM – 7 PM</span></li>
+            <li data-day="1"><span class="day">Monday</span><span class="time">5 AM – 7 PM</span></li>
+            <li data-day="2"><span class="day">Tuesday</span><span class="time">5 AM – 7 PM</span></li>
+            <li data-day="3"><span class="day">Wednesday</span><span class="time">5 AM – 7 PM</span></li>
+            <li data-day="4"><span class="day">Thursday</span><span class="time">5 AM – 7 PM</span></li>
+            <li data-day="5"><span class="day">Friday</span><span class="time">5 AM – 7 PM</span></li>
+            <li data-day="6"><span class="day">Saturday</span><span class="time">5 AM – 7 PM</span></li>
+          </ul>
+        </div>
+        <div class="reveal">
+          <div class="info-stack">
+            <div class="info-row">
+              <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-6-5.7-6-10a6 6 0 1 1 12 0c0 4.3-6 10-6 10z"/><circle cx="12" cy="11" r="2.5"/></svg></div>
+              <div><div class="k">Address</div><a class="v" href="https://www.google.com/maps/dir/?api=1&destination=1517+TX-332+Freeport+TX+77541" target="_blank" rel="noopener">1517 TX-332, Freeport, TX 77541</a></div>
+            </div>
+            <div class="info-row">
+              <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.4-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></div>
+              <div><div class="k">Phone</div><a class="v" href="tel:+19795349143">(979) 534-9143</a></div>
+            </div>
+            <div class="info-row">
+              <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+              <div><div class="k">Hours</div><div class="v">Open Every Day · 5 AM – 7 PM</div></div>
+            </div>
+            <div class="info-row">
+              <div class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.2c-1.2 0-1.6.8-1.6 1.6V12h2.7l-.4 2.9h-2.3v7A10 10 0 0 0 22 12z"/></svg></div>
+              <div><div class="k">Follow</div><a class="v" href="https://www.facebook.com/profile.php?id=61586452265260" target="_blank" rel="noopener">Find us on Facebook</a></div>
+            </div>
+          </div>
+          <iframe class="map-frame" title="Flattie Daddy's Bait Camp location map" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+            src="https://maps.google.com/maps?q=1517%20TX-332%20Freeport%20TX%2077541&t=&z=14&ie=UTF8&iwloc=&output=embed"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────── CONTACT ─────────── -->
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <div class="contact-grid">
+        <div class="reveal">
+          <span class="label">Get in Touch</span>
+          <h2>Questions or Booking a Trip?</h2>
+          <p>Call or text us, send a message on Facebook, or drop a note below — we'll get right back to you about bait, gear, or setting up a charter.</p>
+          <div class="quick-actions">
+            <a class="qa" href="tel:+19795349143">
+              <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.4-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></span>
+              <span><span class="k">Call</span><br><span class="v">(979) 534-9143</span></span>
+            </a>
+            <a class="qa" href="sms:+19795349143">
+              <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 9 9 0 0 1-3.8-.8L3 21l1.9-4.2A8.4 8.4 0 0 1 3 11.5 8.4 8.4 0 0 1 12 3a8.4 8.4 0 0 1 9 8.5z"/></svg></span>
+              <span><span class="k">Text</span><br><span class="v">(979) 534-9143</span></span>
+            </a>
+            <a class="qa" href="https://www.facebook.com/profile.php?id=61586452265260" target="_blank" rel="noopener">
+              <span class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.2c-1.2 0-1.6.8-1.6 1.6V12h2.7l-.4 2.9h-2.3v7A10 10 0 0 0 22 12z"/></svg></span>
+              <span><span class="k">Message</span><br><span class="v">Flattie Daddy's on Facebook</span></span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Replace YOUR_FORM_ID with your Formspree form ID (formspree.io) -->
+        <form class="form-card reveal" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+          <h3>Send Us a Message</h3>
+          <div class="field">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+          <div class="field">
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" required />
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" />
+          </div>
+          <div class="field">
+            <label for="topic">I'm interested in</label>
+            <select id="topic" name="topic">
+              <option>Bait &amp; tackle question</option>
+              <option>Booking an inshore charter</option>
+              <option>Store hours / general</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Tell us what you're after — dates, party size, what you want to catch…"></textarea>
+          </div>
+          <button type="submit" class="btn btn-sun">Send Message</button>
+          <p class="form-note">Or just call/text us at (979) 534-9143 — we're quickest by phone.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────── FOOTER ─────────── -->
+  <footer>
+    <div class="wrap">
+      <div class="foot-grid">
+        <div>
+          <div class="foot-brand">
+            <img class="logo" src="flattie-logo.png" alt="Flattie Daddy's Bait Camp" />
+          </div>
+          <p>Live bait, tackle &amp; inshore charters on TX-332 in Freeport, Texas. Your first stop before the first cast.</p>
+        </div>
+        <div class="foot-col">
+          <h4>Explore</h4>
+          <a href="#shop">The Camp</a>
+          <a href="#charters">Charters</a>
+          <a href="#visit">Visit Us</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <div class="foot-col">
+          <h4>Visit &amp; Call</h4>
+          <a href="https://www.google.com/maps/dir/?api=1&destination=1517+TX-332+Freeport+TX+77541" target="_blank" rel="noopener">1517 TX-332, Freeport, TX</a>
+          <a href="tel:+19795349143">(979) 534-9143</a>
+          <span>Open Daily · 5 AM – 7 PM</span>
+          <a href="https://www.facebook.com/profile.php?id=61586452265260" target="_blank" rel="noopener">Facebook</a>
+        </div>
+      </div>
+      <div class="foot-bottom">
+        <span>© <span id="year"></span> Flattie Daddy's Bait Camp. All rights reserved.</span>
+        <span>Website by <a href="#">WebPixle</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // sticky nav
+    const nav = document.getElementById('nav');
+    const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 40);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    // mobile menu
+    const menu = document.getElementById('mobileMenu');
+    document.getElementById('hamburger').addEventListener('click', () => menu.classList.add('open'));
+    document.getElementById('mobileClose').addEventListener('click', () => menu.classList.remove('open'));
+    menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => menu.classList.remove('open')));
+
+    // highlight today's hours
+    const today = new Date().getDay();
+    const todayLi = document.querySelector('.hours-list li[data-day="' + today + '"]');
+    if (todayLi) todayLi.classList.add('today');
+
+    // reveal on scroll
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+    // current year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
